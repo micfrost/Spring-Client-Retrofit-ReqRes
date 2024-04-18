@@ -1,13 +1,13 @@
+# User Management System - Retrofit Client
 
-# RetrofitCA API Client
+## Project Overview
+This User Management System is a Java-based application developed with Spring Boot and Retrofit. It facilitates operations related to user management, including creating, retrieving, updating, and deleting user data. The application interfaces with an external API to perform these operations both synchronously and asynchronously.
 
-## Overview
-The retrofit-ca application is designed to demonstrate the integration of Retrofit with Spring Boot for making HTTP requests to an external API. This example uses the JSONPlaceholder as a mock backend for testing CRUD operations on users.
-
-## Features
-- **Synchronous and Asynchronous Requests:** Demonstrates both synchronous (`MainSync.java`) and asynchronous (`MainAsync.java`) operations to fetch and post user data.
-- **Error Handling:** Includes basic error handling for HTTP requests.
-- **GSON Integration:** Uses Gson for JSON serialization and deserialization.
+## Technologies Used
+- Java
+- Spring Boot
+- Retrofit
+- Gson
 
 ## Requirements
 - Java JDK 11 or later
@@ -56,9 +56,7 @@ Created by Michal Frost
 
 ## Screenshots
 ### SYNC Request
-![Screenshot from 2024-04-18 12-14-48.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-14-48.png)
-
-
+![Screenshot from 2024-04-18 15-25-28.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2015-25-28.png)
 
 ### ASYNC Request
-![Screenshot from 2024-04-18 12-14-52.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-14-52.png)
+![Screenshot from 2024-04-18 15-24-06.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2015-24-06.png)
