@@ -3,11 +3,6 @@
 ## Project Overview
 This User Management System is a Java-based application developed with Spring Boot and Retrofit. It facilitates operations related to user management, including creating, retrieving, updating, and deleting user data. The application interfaces with an external API to perform these operations both synchronously and asynchronously.
 
-## Technologies Used
-- Java
-- Spring Boot
-- Retrofit
-- Gson
 
 ## Requirements
 - Java JDK 11 or later
