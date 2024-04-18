@@ -4,35 +4,106 @@ import dev.micfro.retrofitca.RetrofitClient;
 import retrofit2.Call;
 import retrofit2.Response;
 
-    public class MainSync {
+public class MainSync {
 
-        public static void main(String[] args) {
-            // Create an instance of the ApiServiceUser interface to make the HTTP request to the API endpoint
-            ApiServiceUser apiServiceUser = RetrofitClient.getClient().create(ApiServiceUser.class);
+    public static void main(String[] args) {
+        ApiServiceUser apiServiceUser = RetrofitClient.getClient().create(ApiServiceUser.class);
 
-            // Synchronous execute method to make the HTTP request
-            try {
-                Call<User> call = apiServiceUser.getUserByID(2); // Attempt to retrieve the user with ID 2
-                Response<User> response = call.execute(); // Execute the call synchronously and retrieve the response from the server
+        // Synchronously fetch a user using GET
+        retrieveUserSync(apiServiceUser, 2);
 
-                if (response.isSuccessful()) {
-                    User user = response.body(); // Get the response body and store it in a User object
-                    if (user != null) {
-                        System.out.println("User Details:");
-                        System.out.println("User ID: " + user.getId());
-                        System.out.println("User Name: " + user.getName());
-                        System.out.println("User Email: " + user.getEmail());
-                    } else {
-                        System.out.println("Response body was null.");
-                    }
-                } else {
-                    // Error handling for unsuccessful response
-                    System.out.println("Error: " + response.errorBody().string());
-                }
-            } catch (Exception e) {
-                // This catch is broad, ideally specify exceptions like IOException or HttpException if applicable
-                System.out.println("Error occurred while making the request: " + e.getMessage());
-                e.printStackTrace();
+        // Synchronously create a user using POST
+        createUserSync(apiServiceUser);
+
+        // Synchronously update a user using PUT
+        updateUserSync(apiServiceUser, 2);
+
+        // Synchronously delete a user using DELETE
+        deleteUserSync(apiServiceUser, 2);
+    }
+
+    private static void retrieveUserSync(ApiServiceUser service, int userId) {
+        try {
+            Call<User> call = service.getUserByID(userId);
+            Response<User> response = call.execute();
+            if (response.isSuccessful() && response.body() != null) {
+                User user = response.body();
+                System.out.println("User Details:");
+                System.out.println("User ID: " + user.getId());
+                System.out.println("User Name: " + user.getName());
+                System.out.println("User Email: " + user.getEmail());
+            } else {
+                System.out.println("Response body was null or response was not successful. HTTP Error: " + response.code());
             }
+        } catch (Exception e) {
+            System.out.println("Error occurred while making the request: " + e.getMessage());
+            e.printStackTrace();
         }
     }
+
+    private static void createUserSync(ApiServiceUser service) {
+        User newUser = new User();
+        newUser.setName("Michal Frostr");
+        newUser.setEmail("MichalFrost@example.com");
+
+        try {
+            Call<User> call = service.createUser(newUser);
+            Response<User> response = call.execute();
+            if (response.isSuccessful() && response.body() != null) {
+                User user = response.body();
+                System.out.println("Successfully created new User:");
+                System.out.println("User ID: " + user.getId());
+                System.out.println("User Name: " + user.getName());
+                System.out.println("User Email: " + user.getEmail());
+                System.out.println("- - - - -");
+            } else {
+                System.out.println("Failed to create user. HTTP Error: " + response.code());
+            }
+        } catch (Exception e) {
+            System.out.println("Error occurred while creating user: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static void updateUserSync(ApiServiceUser service, int userId) {
+        User updatedUser = new User();
+        updatedUser.setId(userId);
+        updatedUser.setName("Updated Michalsky");
+        updatedUser.setEmail("UpdatedEmailMichalsy@example.com");
+
+        try {
+            Call<User> call = service.updateUser(userId, updatedUser);
+            Response<User> response = call.execute();
+            if (response.isSuccessful()) {
+                User user = response.body();
+                System.out.println("Successfully updated User:");
+                System.out.println("User ID: " + user.getId());
+                System.out.println("User Name: " + user.getName());
+                System.out.println("User Email: " + user.getEmail());
+                System.out.println("- - - - -");
+            } else {
+                System.out.println("Failed to update user. HTTP Error: " + response.code());
+            }
+        } catch (Exception e) {
+            System.out.println("Error occurred while updating user: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static void deleteUserSync(ApiServiceUser service, int userId) {
+        try {
+            Call<Void> call = service.deleteUser(userId);
+            Response<Void> response = call.execute();
+            if (response.isSuccessful()) {
+                System.out.println("Successfully deleted User.");
+                System.out.println("- - - - -");
+            } else {
+                System.out.println("Failed to delete user. HTTP Error: " + response.code());
+            }
+        } catch (Exception e) {
+            System.out.println("Error occurred while deleting user: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+}
