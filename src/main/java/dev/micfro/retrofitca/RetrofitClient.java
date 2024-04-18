@@ -1,4 +1,4 @@
-package dev.micfro.retrofitcaAsync;
+package dev.micfro.retrofitca;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

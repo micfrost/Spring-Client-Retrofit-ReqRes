@@ -1,12 +1,10 @@
-package dev.micfro.retrofitcaSync;
+package dev.micfro.retrofitca;
 
-import dev.micfro.retrofitcaAsync.ApiServiceUser;
-import dev.micfro.retrofitcaAsync.User;
+import dev.micfro.retrofitca.RetrofitClient;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
-    public class Main {
+    public class MainSync {
 
         public static void main(String[] args) {
             // Create an instance of the ApiServiceUser interface to make the HTTP request to the API endpoint

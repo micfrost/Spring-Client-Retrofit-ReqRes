@@ -1,4 +1,4 @@
-package dev.micfro.retrofitcaAsync;
+package dev.micfro.retrofitca;
 
 public class User {
     private int id;
