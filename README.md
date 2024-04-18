@@ -52,7 +52,7 @@ Run the MainSync.java class. This class demonstrates synchronous calls to the AP
 
 
 ## Author
-Created by Michal Frost
+Created by Michal Frost 
 
 ## Screenshots
 ### SYNC Request
