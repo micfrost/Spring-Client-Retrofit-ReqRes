@@ -54,5 +54,11 @@ Run the MainSync.java class. This class demonstrates synchronous calls to the AP
 ## Author
 Created by Michal Frost
 
-![Screenshot from 2024-04-18 12-09-33.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-09-33.png)
-![Screenshot from 2024-04-18 12-09-47.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-09-47.png)
+## Screenshots
+### SYNC Request
+![Screenshot from 2024-04-18 12-14-48.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-14-48.png)
+
+
+
+### ASYNC Request
+![Screenshot from 2024-04-18 12-14-52.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-14-52.png)
