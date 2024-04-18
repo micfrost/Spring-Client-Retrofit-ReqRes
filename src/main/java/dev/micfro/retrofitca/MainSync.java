@@ -7,6 +7,9 @@ public class MainSync {
 
     public static void main(String[] args) {
         ApiServiceUser apiServiceUser = RetrofitClient.getClient().create(ApiServiceUser.class);
+        System.out.println(" ----------------------------------- ");
+        System.out.println("SYNC REQUESTS");
+        System.out.println(" ----------------------------------- ");
 
         // Synchronously fetch a user using GET
         retrieveUserSync(apiServiceUser, 2);

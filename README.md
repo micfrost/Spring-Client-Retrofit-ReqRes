@@ -56,7 +56,7 @@ Created by Michal Frost
 
 ## Screenshots
 ### SYNC Request
-![Screenshot from 2024-04-18 15-25-28.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2015-25-28.png)
+![Screenshot from 2024-04-18 15-31-14.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2015-31-14.png)
 
 ### ASYNC Request
-![Screenshot from 2024-04-18 15-24-06.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2015-24-06.png)
+![Screenshot from 2024-04-18 15-32-09.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2015-32-09.png)

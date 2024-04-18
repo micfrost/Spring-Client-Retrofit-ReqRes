@@ -8,7 +8,9 @@ public class MainAsync {
 
     public static void main(String[] args) {
         ApiServiceUser apiServiceUser = RetrofitClient.getClient().create(ApiServiceUser.class);
-
+        System.out.println(" ----------------------------------- ");
+        System.out.println("ASYNC REQUESTS");
+        System.out.println(" ----------------------------------- ");
         // Asynchronously retrieve a user by ID using GET
         retrieveUserAsync(apiServiceUser, 1);
 
