@@ -2,7 +2,7 @@
 # RetrofitCA API Client
 
 ## Overview
-This project implements an API client using Retrofit and Gson in Java, aimed at demonstrating synchronous and asynchronous HTTP requests. The RetrofitCA client allows users to retrieve and create user data from a mock online REST service.
+The retrofit-ca application is designed to demonstrate the integration of Retrofit with Spring Boot for making HTTP requests to an external API. This example uses the JSONPlaceholder as a mock backend for testing CRUD operations on users.
 
 ## Features
 - **Synchronous and Asynchronous Requests:** Demonstrates both synchronous (`MainSync.java`) and asynchronous (`MainAsync.java`) operations to fetch and post user data.
@@ -31,20 +31,28 @@ This project implements an API client using Retrofit and Gson in Java, aimed at 
     <version>2.9.0</version>
 </dependency>
 
-## Project Structure
-- ApiServiceUser.java: Interface for Retrofit API calls.
-- User.java: Model class representing a user.
-- RetrofitClient.java: Provides the Retrofit instance.
-- MainSync.java: Contains the main method for synchronous server requests.
-- MainAsync.java: Contains the main method for asynchronous server requests.
-- RetrofitCaApplication.java: Spring Boot application launcher.
+## Usage 
+The application supports both synchronous and asynchronous operations to create, retrieve, update, and delete user data. Below are the examples of how you can execute these operations.
 
-## Example Usage
+### Synchronous Execution
+Run the MainSync.java class. This class demonstrates synchronous calls to the API:
 
-- Synchronous User Fetch:
-Execute MainSync.java to fetch user details synchronously from the API.
+- Fetch a user by ID
+- Create a new user
+- Update an existing user
+- Delete a user
 
-- Asynchronous User Creation:
-Execute MainAsync.java to asynchronously create a new user in the system.
+### Asynchronous Execution
+  Run the MainAsync.java class. This class demonstrates asynchronous calls to the API using callbacks:
+
+- Fetch a user by ID asynchronously
+- Create a new user asynchronously
+- Update an existing user asynchronously
+- Delete a user asynchronously
+
+
 ## Author
 Created by Michal Frost
+
+![Screenshot from 2024-04-18 12-09-33.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-09-33.png)
+![Screenshot from 2024-04-18 12-09-47.png](src%2Fmain%2Fresources%2Fimages%2FScreenshot%20from%202024-04-18%2012-09-47.png)

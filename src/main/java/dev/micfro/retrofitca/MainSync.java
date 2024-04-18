@@ -28,10 +28,12 @@ public class MainSync {
             Response<User> response = call.execute();
             if (response.isSuccessful() && response.body() != null) {
                 User user = response.body();
-                System.out.println("User Details:");
+                System.out.println("- - - - -");
+                System.out.println("GET method - fetch an existing User:");
                 System.out.println("User ID: " + user.getId());
                 System.out.println("User Name: " + user.getName());
                 System.out.println("User Email: " + user.getEmail());
+                System.out.println("- - - - -");
             } else {
                 System.out.println("Response body was null or response was not successful. HTTP Error: " + response.code());
             }
@@ -43,7 +45,7 @@ public class MainSync {
 
     private static void createUserSync(ApiServiceUser service) {
         User newUser = new User();
-        newUser.setName("Michal Frostr");
+        newUser.setName("Michal Frost");
         newUser.setEmail("MichalFrost@example.com");
 
         try {
@@ -51,7 +53,7 @@ public class MainSync {
             Response<User> response = call.execute();
             if (response.isSuccessful() && response.body() != null) {
                 User user = response.body();
-                System.out.println("Successfully created new User:");
+                System.out.println("POST method -  create new User:");
                 System.out.println("User ID: " + user.getId());
                 System.out.println("User Name: " + user.getName());
                 System.out.println("User Email: " + user.getEmail());
@@ -76,7 +78,7 @@ public class MainSync {
             Response<User> response = call.execute();
             if (response.isSuccessful()) {
                 User user = response.body();
-                System.out.println("Successfully updated User:");
+                System.out.println("PUT method - updated User:");
                 System.out.println("User ID: " + user.getId());
                 System.out.println("User Name: " + user.getName());
                 System.out.println("User Email: " + user.getEmail());
@@ -95,7 +97,7 @@ public class MainSync {
             Call<Void> call = service.deleteUser(userId);
             Response<Void> response = call.execute();
             if (response.isSuccessful()) {
-                System.out.println("Successfully deleted User.");
+                System.out.println("DELETE method - User deleted successfully.");
                 System.out.println("- - - - -");
             } else {
                 System.out.println("Failed to delete user. HTTP Error: " + response.code());

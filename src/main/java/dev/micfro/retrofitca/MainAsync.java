@@ -30,6 +30,7 @@ public class MainAsync {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     User user = response.body();
+                    System.out.println("- - - - -");
                     System.out.println("GET method - fetch an existing User:");
                     System.out.println("User ID: " + user.getId());
                     System.out.println("User Name: " + user.getName());
@@ -50,7 +51,7 @@ public class MainAsync {
     // create
     private static void createUserAsync(ApiServiceUser service) {
         User newUser = new User();
-        newUser.setName("Michal Frostr");
+        newUser.setName("Michal Frost");
         newUser.setEmail("MichalFrost@example.com");
 
         Call<User> createUserCall = service.createUser(newUser);
